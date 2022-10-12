@@ -49,7 +49,7 @@ export default function useGraphData() {
     .catch((e) => {
       console.log("Promise error: ", e)
     })
-  }, [date, presentHourData]);
+  });
 
   function saveCapacity(time, numberOfPeople) {
     const today = new Date();
