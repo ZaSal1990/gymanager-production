@@ -8,7 +8,7 @@ import { loginButtonContext } from "../../providers/LoginButtonProvider";
 
 export default function GymCapacity(props) {
   const { date, setDate, presentHourData, presentDayData, saveCapacity } = useGraphData();
-  const { user, isAdmin } = useContext(loginButtonContext);
+  const { isAdmin } = useContext(loginButtonContext);
 
   return (
     <div className="capacity-view">

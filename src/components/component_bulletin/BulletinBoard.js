@@ -11,7 +11,7 @@ import { loginButtonContext } from "../../providers/LoginButtonProvider";
 export default function BulletinBoard() {
 
   const { bulletinData, editStatusOfBulletin } = useContext(bulletinBoardContext);
-  const { user, isAdmin } = useContext(loginButtonContext);
+  const { isAdmin } = useContext(loginButtonContext);
 
   const bulletinItems = bulletinData.slice().reverse().map((bulletin, index) => {
     return (
