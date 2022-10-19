@@ -14,7 +14,7 @@ export default function Bulletin(props) {
 
       <footer className="bulletin--footer">
         <label className="bulletin--age">{props.time}</label>
-        {props.isadmin && <button className="bulletin-delete" onClick={props.onDelete}>Delete</button>}
+        {props.isAdmin && <button className="bulletin-delete" onClick={props.onDelete}>Delete</button>}
       </footer>
     </article>
   );

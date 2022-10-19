@@ -1,12 +1,12 @@
 import React, { useContext }from 'react';
 import { useForm } from 'react-hook-form';
 import Error from '../Error';
-import { loginContext } from "../../../providers/LoginProvider";
+import { loginButtonContext } from "../../../providers/LoginButtonProvider";
 
 
 export default function Form(props) {
 
-  const { user } = useContext(loginContext);
+  const { user } = useContext(loginButtonContext);
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onFormSubmit = data => { props.onSubmit(data) }
@@ -23,7 +23,7 @@ export default function Form(props) {
                 <label htmlFor="customer-name">Customer Name: </label>
               </td>
               <td>
-                <input name="user" id="customer-name" type="text" placeholder={user.name} {...register("user", { required: "Error: Cannot submit empty field", max: 30, min: 1 })} />
+                <input name="user" id="customer-name" type="text" placeholder={user} {...register("user", { required: "Error: Cannot submit empty field", max: 30, min: 1 })} />
                 {errors?.user && <Error message={errors.user.message}></Error>}
               </td>
             </tr>

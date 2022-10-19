@@ -24,8 +24,9 @@ nav {
     padding: 1vh;
   }
 
-  .nav--project-name {
+  .nav--project-name a {
     padding: 1rem;
+    color: #ffffff;
     
   }
 
@@ -51,7 +52,6 @@ nav {
       color: #002642;
       border-color: #002642;
       width: 95%;
-      margin: 0.35vw;
       text-align: center;
       overflow: auto;
       border-radius: 0.5rem;
@@ -84,7 +84,6 @@ nav {
   }
 
   .nav-bar-right {
-    width: 15vw;
   }
 
   // .login--register {

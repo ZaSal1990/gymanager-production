@@ -6,16 +6,16 @@ import "./BulletinBoard.scss";
 import { format } from 'timeago.js';
 
 import { bulletinBoardContext } from "../../providers/BulletinBoardProvider";
-import { loginContext } from "../../providers/LoginProvider";
+import { loginButtonContext } from "../../providers/LoginButtonProvider";
 
 export default function BulletinBoard() {
 
   const { bulletinData, editStatusOfBulletin } = useContext(bulletinBoardContext);
-  const { user } = useContext(loginContext);
+  const { user, isAdmin } = useContext(loginButtonContext);
 
   const bulletinItems = bulletinData.slice().reverse().map((bulletin, index) => {
     return (
-      <Bulletin key={bulletin.id} title={bulletin.title} description={bulletin.description} time={format(bulletin.created_at)} onDelete={() => editStatusOfBulletin(bulletin.id, bulletinData.length - index - 1)} isadmin={user.isadmin} />
+      <Bulletin key={bulletin.id} title={bulletin.title} description={bulletin.description} time={format(bulletin.created_at)} onDelete={() => editStatusOfBulletin(bulletin.id, bulletinData.length - index - 1)} isAdmin={isAdmin} />
     );
   });
 
@@ -24,7 +24,7 @@ export default function BulletinBoard() {
       <div className="bulletin-items-container">
         {bulletinItems}
       </div>
-      { user.isadmin && <BulletinForm /> }
+      { isAdmin && <BulletinForm /> }
     </div>
   );
 }
